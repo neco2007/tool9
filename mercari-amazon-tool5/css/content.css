@@ -1,0 +1,256 @@
+/**
+ * メルカリ-Amazon販売支援ツール: スタイル定義
+ */
+
+/* 共通スタイル */
+.ma-tool-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ma-tool-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .ma-tool-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 検索ページ用コントロールパネル */
+  .ma-tool-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* フィルターボタン */
+  .ma-tool-btn-filter {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .ma-tool-btn-filter:hover {
+    background-color: #5a6268;
+  }
+  
+  /* スキャンボタン */
+  .ma-tool-btn-scan {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .ma-tool-btn-scan:hover {
+    background-color: #218838;
+  }
+  
+  /* Amazon検索ボタン */
+  .ma-tool-btn-amazon {
+    background-color: #ff9900;
+    color: white;
+  }
+  
+  .ma-tool-btn-amazon:hover {
+    background-color: #e68a00;
+  }
+  
+  /* 出品登録ボタン */
+  .ma-tool-btn-register {
+    background-color: #0066c0;
+    color: white;
+  }
+  
+  .ma-tool-btn-register:hover {
+    background-color: #005299;
+  }
+  
+  /* 商品アイテム内のボタン（小サイズ） */
+  .ma-tool-btn-amazon-small,
+  .ma-tool-btn-register-small {
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 3px;
+  }
+  
+  /* 商品アイテム内のボタンコンテナ */
+  .ma-tool-item-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: rgba(248, 249, 250, 0.9);
+    border-top: 1px solid #e9ecef;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  
+  /* 商品詳細ページ用コントロール */
+  .ma-tool-item-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  /* NGワード警告 */
+  .ma-tool-ng-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border-left: 4px solid #ffc107;
+    font-weight: bold;
+  }
+  
+  /* NGアイテム（非表示状態） */
+  .ma-tool-hidden {
+    display: none !important;
+  }
+  
+  /* NGアイテム（表示状態でも識別できるように） */
+  .ma-tool-ng:not(.ma-tool-hidden) {
+    position: relative;
+    opacity: 0.7;
+  }
+  
+  .ma-tool-ng:not(.ma-tool-hidden)::before {
+    content: "NG";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #dc3545;
+    color: white;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 0 0 4px 0;
+    z-index: 101;
+  }
+  
+  /* 結果メッセージ */
+  .ma-tool-message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .ma-tool-message-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .ma-tool-message-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+  }
+  
+  .ma-tool-message-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  /* 利益率表示 */
+  .ma-tool-profit-high {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .ma-tool-profit-medium {
+    color: #fd7e14;
+    font-weight: bold;
+  }
+  
+  .ma-tool-profit-low {
+    color: #dc3545;
+    font-weight: bold;
+  }
+  
+  /* ローディングインジケーター */
+  .ma-tool-loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #007bff;
+    border-radius: 50%;
+    animation: ma-tool-spin 1s linear infinite;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  
+  @keyframes ma-tool-spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* トースト通知 */
+  .ma-tool-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    z-index: 10000;
+    font-size: 14px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .ma-tool-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* モバイル向け調整 */
+  @media (max-width: 768px) {
+    .ma-tool-controls {
+      flex-direction: column;
+      padding: 5px;
+    }
+    
+    .ma-tool-btn {
+      width: 100%;
+      margin: 5px 0;
+    }
+    
+    .ma-tool-item-buttons {
+      flex-direction: column;
+      padding: 0;
+    }
+    
+    .ma-tool-btn-amazon-small,
+    .ma-tool-btn-register-small {
+      width: 100%;
+      margin: 2px 0;
+    }
+  }

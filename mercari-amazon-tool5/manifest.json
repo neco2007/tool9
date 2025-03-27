@@ -1,0 +1,52 @@
+{
+    "manifest_version": 3,
+    "name": "メルカリ-Amazon販売支援ツール",
+    "version": "1.0.1",
+    "description": "メルカリから商品情報を取得し、Amazonでの価格比較と販売管理を支援します",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting",
+      "webNavigation"
+    ],
+    "host_permissions": [
+      "https://jp.mercari.com/*",
+      "https://www.amazon.co.jp/*",
+      "https://inventory-manager-rosy-five.vercel.app/*"
+    ],
+    "background": {
+      "service_worker": "js/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://jp.mercari.com/*",
+          "https://www.amazon.co.jp/*"
+        ],
+        "js": [
+          "js/filter.js",
+          "js/amazon.js",
+          "js/api.js",
+          "js/content.js"
+        ],
+        "css": [
+          "css/content.css"
+        ],
+        "run_at": "document_end"
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "data/*",
+          "img/*"
+        ],
+        "matches": [
+          "<all_urls>"
+        ]
+      }
+    ],
+    "action": {
+      "default_title": "メルカリ-Amazon販売支援ツール"
+    }
+  }
